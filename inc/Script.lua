@@ -2544,8 +2544,6 @@ local text =[[
 📛¦ طرد المحذوفين : لطرد الحسابات المحذوفه⊰•
 📟¦ كشف البوتات : لاضهار عدد البوتات الموجوده⊰•
 
-🗯📮┇  للأستفسار ☂️ ⊰•
-
 ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2584,7 +2582,6 @@ local text = [[
 💬¦ المجموعه : لعرض معلومات المجموعه 
 
 🔻➖▪️➖▪️➖▪️➖🔻
-🗯¦ راسلني للاستفسار 💡
 ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2635,7 +2632,6 @@ First source in iraq🔱 »
 📢¦ تفعيل «» تعطيل •⊱  التحذير ⊰•
 🗨¦ تفعيل «» تعطيل •⊱  الايدي ⊰•
 🔻➖▪️➖▪️➖▪️➖🔻
-👨🏻‍💻¦ للاستفسار 💡↭
 
 ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)

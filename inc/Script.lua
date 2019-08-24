@@ -40,12 +40,11 @@ if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name
 local Namei = FlterName(data,20)
 if redis:get(kenwa..':lock_id_photo:'..arg.chat_id_) then
 sendMsg(arg.chat_id_,arg.id_,
-'👤¦ أســمـك •⊱ { '..Namei..' } ⊰•\n'
+..'🛤┐ايديـك •⊱ '..msg.sender_user_id_..' ⊰•\n'
 ..'['..UserNameID..']'
-..'🏷¦ ايديــك •⊱ {`'..data.id_..'`} ⊰•\n\n'
-..'📮¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
-..'⭐️¦ تفاعـلك » '..Get_Ttl(msgs)..'\n'
-..'💬¦ رسائلك •⊱ {'..msgs..'} ⊰•\n➖')
+..'📡┤رتبتـك •⊱ '..arg.TheRank..' ⊰•\n'
+..'⭐️┤تفاعلك  » '..Get_Ttl(msgs)..'\n'
+..'💬┘رسائلك •⊱ {'..msgs..'} ⊰•\n➖')
 return false
 end
 if data.status_.ID == "UserStatusEmpty" then

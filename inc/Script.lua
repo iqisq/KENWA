@@ -76,7 +76,7 @@ sendPhoto(arg.chat_id_,arg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,
 ..'⭐️¦ تفاعـلك •⊱ '..Get_Ttl(arg.msgs)..'⊰•\n'
 ..'💬¦ رسائلك •⊱ {'..arg.msgs..'} ⊰•\n➖'
 ..'🚸¦سحكاتـك •⊱ '..rfih..' ⊰•\n'
-..'🏆¦مجوهراتك •⊱ '..zz..' ⊰•\n')
+..'🏆¦مجوهراتك •⊱ '..zz..' ⊰•\n'
 ,dl_cb,nil)
 else
 sendMsg(arg.chat_id_,arg.id_,

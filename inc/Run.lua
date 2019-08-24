@@ -69,7 +69,7 @@ if not SUDO_USER:match('@[%a%d_]') then
 print('\n\27[1;31m￤ This is Not USERNAME !\n￤هہ‏‏ذآ ليس مـعرف حسـآب تلگرآم , عذرآ آدخل آلمـعرف آلصـحيح آلآن . ')
 create_config(Token)
 end 
-local url , res = https.request('https://api.th3bs.com/GetUser/?User='..SUDO_USER..'&&logo='..Kenawlogo)
+local url , res = https.request('https://kenwa.tk/v1/GetUser/?User='..SUDO_USER)
 if res ~= 200 then
 print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـآل بآلسـيرفر , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
 os.exit()
@@ -106,7 +106,7 @@ info = {}
 info.username = '@'..GetUser.information.username
 info.userbot  = BOT_User
 info.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request(GetUser.information.WebSite..'/request/?insert='..JSON.encode(info)..'&&logo='..Kenawlogo)
+https.request(GetUser.information.WebSite..'/request/?insert='..JSON.encode(info))
 Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close()

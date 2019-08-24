@@ -36,22 +36,17 @@ if redis:get(kenwa..'lock_id'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgs = redis:get(kenwa..'msgs:'..data.id_..':'..arg.chat_id_) or 1
 if data.username_ then UserNameID = "🎫¦ مـعرفك •⊱ @"..data.username_.." ⊰•\n" else UserNameID = "" end
-local zz = (redis:get(boss..':User_Points:'..msg.chat_id_..msg.sender_user_id_) or 0)
-local rfih = (redis:get(boss..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name = data.first_name_ end
 local Namei = FlterName(data,20)
 if redis:get(kenwa..':lock_id_photo:'..arg.chat_id_) then
 sendMsg(arg.chat_id_,arg.id_,
-'🚸¦ الايدي بالصورة معطل من قبل المشرفين ... !\n\n'
+'🚸¦ ايدي بالصورة معطل من قبل المشرفين ... !\n\n'
 ..'👤¦ أســمـك •⊱ { '..Namei..' } ⊰•\n'
 ..'['..UserNameID..']'
 ..'🏷¦ ايديــك •⊱ {`'..data.id_..'`} ⊰•\n\n'
 ..'📮¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
 ..'⭐️¦ تفاعـلك » '..Get_Ttl(msgs)..'\n'
-..'💬¦ رسائلك •⊱ {'..msgs..'} ⊰•\n➖'
-..'🚸¦سحكاتـك •⊱ '..rfih..' ⊰•\n'
-..'🏆¦مجوهراتك •⊱ '..zz..' ⊰•\n')
-
+..'💬¦ رسائلك •⊱ {'..msgs..'} ⊰•\n➖')
 return false
 end
 if data.status_.ID == "UserStatusEmpty" then
@@ -62,9 +57,7 @@ sendMsg(arg.chat_id_,arg.id_,
 ..'🏷¦ ايديــك •⊱ {`'..data.id_..'`} ⊰•\n\n'
 ..'📮¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
 ..'⭐️¦ تفاعـلك » '..Get_Ttl(msgs)..'\n'
-..'💬¦ رسائلك •⊱ {'..msgs..'} ⊰•\n➖'
-..'🚸¦سحكاتـك •⊱ '..rfih..' ⊰•\n'
-..'🏆¦مجوهراتك •⊱ '..zz..' ⊰•\n')
+..'💬¦ رسائلك •⊱ {'..msgs..'} ⊰•\n➖')
 else
 GetPhotoUser(data.id_,function(arg,data)
 if data.photos_ and data.photos_[0] then 
@@ -75,8 +68,6 @@ sendPhoto(arg.chat_id_,arg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,
 ..'📡¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
 ..'⭐️¦ تفاعـلك •⊱ '..Get_Ttl(arg.msgs)..'⊰•\n'
 ..'💬¦ رسائلك •⊱ {'..arg.msgs..'} ⊰•\n➖'
-..'🚸¦سحكاتـك •⊱ '..rfih..' ⊰•\n'
-..'🏆¦مجوهراتك •⊱ '..zz..' ⊰•\n'
 ,dl_cb,nil)
 else
 sendMsg(arg.chat_id_,arg.id_,
@@ -86,14 +77,14 @@ sendMsg(arg.chat_id_,arg.id_,
 ..'🏷¦ ايديــك •⊱ {`'..arg.sender_user_id_..'`} ⊰•\n\n'
 ..'📮¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
 ..'⭐️¦ تفاعـلك » '..Get_Ttl(arg.msgs)..'\n'
-..'💬¦ رسائلك •⊱ {'..arg.msgs..'} ⊰•\n➖'..'🚸¦سحكاتـك •⊱ '..rfih..' ⊰•\n'
-..'🏆¦مجوهراتك •⊱ '..zz..' ⊰•\n')
+..'💬¦ رسائلك •⊱ {'..arg.msgs..'} ⊰•\n➖')
 end
 end,{chat_id_=arg.chat_id_,id_=arg.id_,TheRank=arg.TheRank,sender_user_id_=data.id_,msgs=msgs,Namei=Namei,UserNameID=UserNameID})
 end
 end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 end
 end
+
 if msg.reply_id and not MsgText[2] then
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
 if not data.sender_user_id_ then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* عذرا هذا العضو ليس موجود ضمن المجموعات \n❕") end

@@ -40,8 +40,7 @@ if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ else Name
 local Namei = FlterName(data,20)
 if redis:get(kenwa..':lock_id_photo:'..arg.chat_id_) then
 sendMsg(arg.chat_id_,arg.id_,
-'🚸¦ ايدي بالصورة معطل من قبل المشرفين ... !\n\n'
-..'👤¦ أســمـك •⊱ { '..Namei..' } ⊰•\n'
+'👤¦ أســمـك •⊱ { '..Namei..' } ⊰•\n'
 ..'['..UserNameID..']'
 ..'🏷¦ ايديــك •⊱ {`'..data.id_..'`} ⊰•\n\n'
 ..'📮¦ رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'

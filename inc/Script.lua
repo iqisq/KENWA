@@ -872,6 +872,11 @@ if not data.id_ then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* لآ يوجد
 local UserID = data.id_
 UserName = Flter_Markdown(arg.UserName)
 
+if MsgText[1] == "نداء للكل" then 
+if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+return ownerlist(msg) .. GetListAdmin(msg) .. whitelist(msg)
+end              
+                              
 if UserID == our_id then   
 return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
 elseif UserID == SUDO_ID then 
@@ -4505,7 +4510,7 @@ Boss = {
 "^(احظرني)$", 
 "^(اطردني)$", 
 "^(جهاتي)$", 
-
+"^(نداء للكل)$",
 
 "^(السورس)$",
 "^(سورس)$",

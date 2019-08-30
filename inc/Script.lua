@@ -2928,7 +2928,7 @@ text = [[💯¦ مـرحبآ آنآ بوت آسـمـي []]..redis:get(kenwa..':
 end
 xsudouser = SUDO_USER:gsub('@','')
 xsudouser = xsudouser:gsub([[\_]],'_')
-local inline = {{{text="آلمـطـور ™",url="t.me/"..xsudouser}}}
+local inline = {{{text="آلمـطـور ※",url="t.me/"..xsudouser}}}
 send_key(msg.sender_user_id_,text,nil,inline,msg.id_)
 return false
 end
